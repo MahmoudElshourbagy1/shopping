@@ -146,7 +146,7 @@ export const syncCartWithUser = async (cartId: string | null) => {
     }
 
     if(!cartId) {
-       
+        // !cartId && !existingUserCart
         return createCart();
     }
 

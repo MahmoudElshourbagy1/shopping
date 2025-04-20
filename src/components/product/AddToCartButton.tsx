@@ -19,13 +19,13 @@ const AddToCartButton = ({ product }: AddToCartButtonProps) => {
         }))
     )
 
-    const [isLoading, setIsLoading] = useState(false);
+    const [isLoading, setLoading] = useState(false);
 
     const handleAddToCart = async () => {
         if(!product.title || product.price === undefined || !product.image) {
             return;
         }
-        setIsLoading(true);
+        setLoading(true);
 
         // Add the item to the cart
         await new Promise(resolve => setTimeout(resolve, 600));
@@ -52,7 +52,7 @@ const AddToCartButton = ({ product }: AddToCartButtonProps) => {
             }
         } catch(e) {}
 
-        setIsLoading(false);
+        setLoading(false);
         open();
     }
 
