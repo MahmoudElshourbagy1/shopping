@@ -140,13 +140,15 @@ export const registerUser = async (email: string, password: string) => {
             user: safeUser,
             error: null,
         }
-    } catch(e) {
+    } catch {
         return {
             user: null,
             error: "Failed to register user"
         }
     }
 }
+
+
 
 export const loginUser = async (email: string, password: string) => {
     const user = await prisma.user.findUnique({

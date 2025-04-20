@@ -17,23 +17,11 @@ const eslintConfig = [
 
   {
     rules: {
-    
       "no-console": "off", 
-      
-     
       "react/prop-types": "off", 
-
-      
       "@typescript-eslint/no-explicit-any": "off", 
-
-     
       "next/no-img-element": "off",
-      
-     
-     
       "react-hooks/rules-of-hooks": "warn", 
-
-     
       "react/jsx-no-target-blank": "error",
     },
   },

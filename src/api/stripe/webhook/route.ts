@@ -116,6 +116,10 @@ export async function POST(req: Request) {
                     })),
                     status: 'PROCESSING',
                 });
+                
+                
+                console.log(order);
+                
         
                 
                 await prisma.cart.delete({ where: { id: cartId } });
