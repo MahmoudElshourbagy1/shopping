@@ -1,7 +1,8 @@
 "use client";
-import { formatPrice } from '@/lib/utils'
+
 import { Product } from '@/sanity.types'
 import { urlFor } from '@/sanity/lib/image';
+import { formatPrice } from '@/src/lib/utils';
 import { useCartStore } from '@/stores/cart-store';
 import { Loader2 } from 'lucide-react'
 import React, { useState } from 'react'

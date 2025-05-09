@@ -1,7 +1,7 @@
 'use client';
 
 import { createCheckoutSession } from '@/actions/stripe-actions';
-import { formatPrice } from '@/lib/utils';
+import { formatPrice } from '@/src/lib/utils';
 import { useCartStore, type CartItem as CartItemType } from '@/stores/cart-store';
 import { Loader2, ShoppingCart, X } from 'lucide-react';
 import Image from 'next/image';
@@ -9,7 +9,7 @@ import Link from 'next/link';
 import React, { useEffect, useMemo, useState } from 'react';
 import { useShallow } from 'zustand/shallow';
 
-const freeShippingAmount = 15; // $15 for free shipping
+const freeShippingAmount = 15; 
 
 const CartItem = ({item}: {item: CartItemType}) => {
     const { removeItem, updateQuantity } = useCartStore(
@@ -137,7 +137,6 @@ const Cart = () => {
 
     return (
         <>
-            {/* Backdrop */}
             {isOpen && (
                 <div
                     className='fixed inset-0 bg-black bg-opacity-50 z-50 transition-opacity backdrop-blur-sm'
@@ -145,7 +144,6 @@ const Cart = () => {
                 />
             )}
 
-            {/* Cart Drawer */}
             <div
                 className={`
                     fixed right-0 top-0 h-full w-full sm:w-[400px] bg-white shadow-2xl
@@ -154,7 +152,6 @@ const Cart = () => {
                 `}
             >
                 <div className='flex flex-col h-full'>
-                    {/* Cart Header */}
                     <div className='flex items-center justify-between p-4 border-b bg-gray-50'>
                         <div className='flex items-center gap-2'>
                             <ShoppingCart className='w-5 h-5' />
@@ -201,10 +198,10 @@ const Cart = () => {
                         )}
                     </div>
 
-                    {/* Cart Footer */}
+                    
                     {items.length > 0 && (
                         <div className='border-t'>
-                            {/* Shipping progress */}
+                           
                             {remainingForFreeShipping > 0 ? (
                                 <div className='p-4 bg-blue-50 border-b'>
                                     <div className='flex items-center gap-2 text-blue-800 mb-2'>
@@ -231,7 +228,7 @@ const Cart = () => {
                                 </div>
                             )}
 
-                            {/* Order summary & checkout */}
+                            
                             <div className='p-4 space-y-4'>
                                 <div className='space-y-2'>
                                     <div className='flex items-center justify-between text-sm'>

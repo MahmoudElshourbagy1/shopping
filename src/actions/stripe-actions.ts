@@ -49,7 +49,7 @@ export const createCheckoutSession = async (cartId: string) => {
                     type: 'fixed_amount',
                     fixed_amount: {
                         currency: 'usd',
-                        amount: totalPrice >= 15 ? 0 : 5 * 100 // $5.00 USD
+                        amount: totalPrice >= 15 ? 0 : 5 * 100 
                     },
                     display_name: totalPrice >= 15 ? 'Free Shipping' : 'Shipping',
                     delivery_estimate: {
